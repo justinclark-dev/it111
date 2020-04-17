@@ -31,12 +31,12 @@
         }
     
         h1 {
-            size: 2.5em;
+            font-size: 2.5em;
             font-family: Georgia, "Times New Roman", Times, serif;	
         }
     
         h2 {
-            size: 2em;
+            font-size: 2em;
             font-family: Georgia, "Times New Roman", Times, serif;	
             padding-bottom: .3em;
             color: #f00;
@@ -86,23 +86,16 @@
         <h3>Our favorite characters!</h3>
 
         <ul>
-            <li><i><a href="">Will</a><i></li>
-            <li><i><a href="">Lucas</a></i></li>
-            <li><i><a href="">Eleven</a><i></li>
-            <li><i><a href="">Mike</a></i></li>
-            <li><i><a href="">Dustin</a></i></li>
+            <li><a href=""><i>Will</i></a></li>
+            <li><a href=""><i>Lucas</i></a></li>
+            <li><a href=""><i>Eleven</i></a></li>
+            <li><a href=""><i>Mike</i></a></li>
+            <li><a href=""><i>Dustin</i></a></li>
         </ul>
 
     </div>
     
-    <a href="">
-        <!-- 
-            Add link to validated results after Compass Server is online:
-
-            https://validator.w3.org/#validate_by_uri+with_options
-
-            http://compass.northseattle.edu/~jclark/it111/assignments/hw1/index.html 
-        -->
+    <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fcompass.northseattle.edu%2F~jclark%2Fit111%2Fassignments%2Fhw2%2F">
         <img src="/images/HTML5-White.svg" alt="HTML5 Valid Logo" style="background: black; width: 100px; padding-right:30px;">
     </a>
     <!--To receive the highest possible grade, you MUST declare the errors between the comment tags-->
@@ -125,22 +118,28 @@
     <!--Error 16  there is no "image" selector, should be replaced with "img"  -->
     <!--Error 17  in css "img" selector, "align" attribute, should be "float"  -->
     <!--Error 18  in css "img" selector, "padding:left" should be "padding-left"  -->
-    <!--Error 19  in css "h3" selector, the hex color has one too many zeros, "#ff00000" should be "#ff0000"  -->
-    <!--Error 20  in css "p" selector, "line height" should be "line-height": 1.5;-->
-    <!--Error 21  in css "p" selector, "line-height" of "1.5" is missing css units like "em"  -->
-    <!--Error 22  in css "p" selector, "padding-bottom" of "1.5" is missing css units like "em"  -->
-    <!--Error 23  in css "a" selector, the hex color is missing a zero at the end to make it yellow, so "#ffff0" should be "#ffff00"  -->
-    <!--Error 24  in the <img> tag, "image" should be "images"  -->
-    <!--Error 25  the "wrapper" div is invalid, '<div="wrapper">' should be '<div id="wrapper">'  -->
-    <!--Error 26  all of the list items should be enclosed in an "<ul></ul>" unordered list  -->
-    <!--Error 27  the extra '<a href="">' should be deleted from the beginning of '<a href=""><li><i><a href="">Will</a><i></li>'  -->
-    <!--Error 28  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Lucas</a></i><li>'  -->
-    <!--Error 29  list item not properly closed '...Lucas</a></i><li>' should be '...Lucas</a></i></li>'  -->
-    <!--Error 30  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Eleven</a><i></li>''   -->
-    <!--Error 31  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Mike</a></i></li>'  -->
-    <!--Error 32  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Dustin</a></i><li>'  -->
-    <!--Error 33  list item not properly closed '...Dustin</a></i><li>' should be '...Dustin</a></i></li>'  -->
-    <!--Error 34  the closing tag for the "wrapper" div should be </div>, not </wrapper>  -->
+    <!--Error 19 in css "h1" selector, "size" should be "font-size" -->
+    <!--Error 20 in css "h2" selector, "size" should be "font-size" -->
+    <!--Error 21  in css "h3" selector, the hex color has one too many zeros, "#ff00000" should be "#ff0000"  -->
+    <!--Error 22  in css "p" selector, "line height" should be "line-height": 1.5;-->
+    <!--Error 23  in css "p" selector, "line-height" of "1.5" is missing css units like "em"  -->
+    <!--Error 24  in css "p" selector, "padding-bottom" of "1.5" is missing css units like "em"  -->
+    <!--Error 25  in css "a" selector, the hex color is missing a zero at the end to make it yellow, so "#ffff0" should be "#ffff00"  -->
+    <!--Error 26  in the <img> tag, "image" should be "images"  -->
+    <!--Error 27  the "wrapper" div is invalid, '<div="wrapper">' should be '<div id="wrapper">'  -->
+    <!--Error 28  all of the list items should be enclosed in an "<ul></ul>" unordered list  -->
+    <!--Error 29  the extra '<a href="">' should be deleted from the beginning of '<a href=""><li><i><a href="">Will</a><i></li>'  -->
+    <!--Error 30  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Lucas</a></i><li>'  -->
+    <!--Error 31  list item not properly closed '...Lucas</a></i><li>' should be '...Lucas</a></i></li>'  -->
+    <!--Error 32  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Eleven</a><i></li>''   -->
+    <!--Error 33  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Mike</a></i></li>'  -->
+    <!--Error 34  '<a href="">' should come after '<li><i>' in '<a href=""><li><i>Dustin</a></i><li>'  -->
+    <!--Error 35  list item not properly closed '...Dustin</a></i><li>' should be '...Dustin</a></i></li>'  -->
+    <!--Error 36  the closing tag for the "wrapper" div should be </div>, not </wrapper>  -->
+
+    <!-- after using the validator more errors were found, I'll condense these errors, I hope that's ok... -->
+
+    <!--Error 37  all the list items had their <a> and <i> tags improperly nested, '<i><a href="">...</a></i>' should be '<a href=""><i>...</i></a>'  -->
     
 </body>
 </html>
