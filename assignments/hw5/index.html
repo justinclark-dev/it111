@@ -4,25 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        body {
-            background: black;
-            color: white;
-            font-family:'Courier New', Courier, monospace;
-            margin: 0 auto;
-            max-width: 940px;
-            text-align: center;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap');
+
+        header, nav, main, aside, section, footer {
+            /* border: 1px solid white; */
+            
+            padding: 1em;
         }
-        a { color: lime;}
+        p {display: grid;grid-template-columns: auto auto;width: 50%;}
+        label, input, textarea, button {display: grid-row; width: 200px;}
+        body {
+            margin: 0;
+            padding:0;
+            background: url('images/pizza-bg-long-2.jpg');
+            background-attachment:scroll;
+            background-position: top;
+            background-size:auto;
+
+            background-size: 1200px;
+            
+            /* background-attachment: fixed; */
+            /* background-position: center; */
+            /* background-size: cover; */
+            font-size: 1.1em;
+            color: white;
+            font-family: 'Montserrat';
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+          
+
+
+
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        fieldset {border: none; border-top: 1px solid green;}
+        legend {font-size: 1.4em;text-transform: uppercase;padding: 0 0.5em;}
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+
+            margin: 0 auto;
+            margin-top: 3.5em;
+            padding: 4em;
+            text-align: center;
+            font-size: .8em;
+            /* background: $dark-bg; */
+
+            
+        }
+
+        footer img {
+                margin-top: 1em;
+                width: 100px;
+            }
+
+            a {color:lime;}
+            a.bad {color:red;}
+            li {margin: 1em;}
     </style>
 </head>
 <body>
 
-    <h1>Page Under Construction</h1>
+    <div class="wrapper">
+        <header>
+            <a href="" class="logo">Logo</a>
+            <nav>
+                <ul>
+                    <li><a href="">Nav</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <p><a href="/">Home</a></p>
+        <main>
+            <section>
+                <h1>Testing PHP Emails</h1>
 
-    <img src="/images/death-star.gif" alt="Image of the Death Star under construction.">
+                <ul>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/php-test.php">PHP Works Fine, echos to HTML</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php" class="bad">From: @gmail.com, To: @SeattleColleges.edu</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php2" class="bad">From: @SeattleColleges.com, To: @gmail.edu</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php3" class="bad">From: @NorthSeattle.com, To: @gmail.edu</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php4" class="bad">From: @SeattleColleges.com, To: @SeattleColleges.edu</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php5" class="bad">From: @NorthSeattle.com, To: @SeattleColleges.edu</a></li>
+                    <li><a href="http://compass.northseattle.edu/~jclark/it111/assignments/hw5/handlers/email-test.php6" class="bad">From: @NorthSeattle.com, To: @NorthSeattle.edu</a></li>
+                </ul>
 
+
+                <!-- <h1>Pizza Order</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates exercitationem itaque neque, incidunt repellendus et accusamus magni odit minima corrupti.
+                </p> -->
+
+                <h2>header 2</h2>
+
+                <form action="handlers/order-pizza.php" method="POST">
+                    <fieldset>
+                        <legend>
+                            Pizza
+                        </legend>
+                    
+                            <p>
+                                <label for="toppings">Toppings</label>
+                                <input type="checkbox" name="toppings" id="toppings">
+                            </p>
+                            <p>
+                                <label for="pizza-count">How many pizzas:</label>
+                                <input type="number" name="pizza_count" id="pizza-count">
+                            </p>
+                            <p>
+                                <label for="">Comments:</label>
+                                <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                            </p>
+                            <p>
+                                <label for="credit-card">Credit Card</label>
+                                <input type="radio" name="credit_card" id="credit-card">
+                            </p>
+                            <!-- <input type="submit" value=""> -->
+                            <p>
+                                <!-- <button type="reset">Reset Form</button>
+                                <button type="submit">Submit Form</button> -->
+
+                                <input type="submit" value="Submit Order">
+                            </p>
+
+
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            Delivery or Pickup
+                        </legend>
+                        <p>
+                            <label for="delivery">Delivery</label>
+                            <input type="radio" id="delivery" name="order_type" value="delivery">
+                        </p>
+                        <p>   
+                            <label for="pickup">Pickup</label> 
+                            <input type="radio" id="pickup" name="order_type" value="pickup">                               
+                        </p>
+                        <p>
+                            <label for="date">Pickup/Delivery Date:</label>
+                            <input type="date" name="date" id="date">
+                        </p>
+                        <p>
+                            <label for="time">Pickup/Delivery Time:</label>
+                            <input type="time" name="time" id="time">
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Customer Info</legend>
+                        <p>
+                            <label for="first-name">First Name:</label>
+                            <input type="text" name="first_name" id="first-name">
+                        </p>
+                        <p>
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" name="last_name" id="last-name">
+                        </p>
+                        <p>
+                            <label for="phone">Phone:</label>
+                            <input type="tel" name="phone" id="phone">
+                        </p>
+                        <p>
+                            <label for="">Email:</label>
+                            <input type="email" name="email" id="email">
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            Custom Radio Buttons
+                        </legend>
+
+
+                        <style>
+                            /* The container */
+                            .container {
+                                display: block;
+                                position: relative;
+                                padding-left: 35px;
+                                margin-bottom: 12px;
+                                cursor: pointer;
+                                font-size: 22px;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                            }
+
+                            /* Hide the browser's default radio button */
+                            .container input {
+                                position: absolute;
+                                opacity: 0;
+                                cursor: pointer;
+                            }
+
+                            /* Create a custom radio button */
+                            .checkmark {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 25px;
+                                width: 25px;
+                                background-color: #eee;
+                                border-radius: 50%;
+                            }
+
+                            /* On mouse-over, add a grey background color */
+                            .container:hover input ~ .checkmark {
+                                background-color: rgb(14, 236, 14);
+                            }
+
+                            /* When the radio button is checked, add a blue background */
+                            .container input:checked ~ .checkmark {
+                                background-color: green;
+                            }
+
+                            /* Create the indicator (the dot/circle - hidden when not checked) */
+                            .checkmark:after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                            }
+
+                            /* Show the indicator (dot/circle) when checked */
+                            .container input:checked ~ .checkmark:after {
+                                display: block;
+                            }
+
+                            /* Style the indicator (dot/circle) */
+                            .container .checkmark:after {
+                                top: 9px;
+                                left: 9px;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background: white;
+                            }
+
+                        </style>
+
+
+                        <label class="container">One
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Two
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Three
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Four
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            Custom Checkboxes
+                        </legend>
+
+                        <style>
+
+                            /* Create a custom radio button */
+                            .checkmark.box {
+                                border-radius: 0%;
+                            }
+
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    border-radius: 0%;
+}
+                        </style>
+
+                        <label class="container">One
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark box"></span>
+                        </label>
+                        <label class="container">Two
+                            <input type="checkbox">
+                            <span class="checkmark box"></span>
+                        </label>
+                        <label class="container">Three
+                            <input type="checkbox">
+                            <span class="checkmark box"></span>
+                        </label>
+                        <label class="container">Four
+                            <input type="checkbox">
+                            <span class="checkmark box"></span>
+                        </label>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+
+        <aside>
+            <section>
+                <h3>header 3</h3>
+            </section>
+        </aside>
+
+        
+    </div>
+
+    <footer>
+        <footer>
+            <p>&copy; 2020 <a href="../../">Justin Clark</a></p>
+            
+            <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fcompass.northseattle.edu%2F%7Ejclark%2Fit111%2Fassignments%2Fhw3%2Fbigger.html">
+                <img src="images/HTML5-White.svg" alt="HTML5 Valid Logo">
+            </a>
+        </footer>
+    </footer>
 </body>
 </html>

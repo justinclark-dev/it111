@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap');
+
+        header, nav, main, aside, section, form, footer {
+            /* border: 1px solid white; */
+            
+            padding: 1em;
+        }
+        p {display: grid;grid-template-columns: auto auto;width: 50%;}
+        label, input, textarea, button {display: grid-row; width: 200px;}
+        body {
+            margin: 0;
+            padding:0;
+            background: url('images/pizza-bg-long-2.jpg');
+            background-attachment:scroll;
+            background-position: top;
+            background-size:auto;
+
+            background-size: 1200px;
+            
+            /* background-attachment: fixed; */
+            /* background-position: center; */
+            /* background-size: cover; */
+            font-size: 1.1em;
+            color: white;
+            font-family: 'Montserrat';
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+          
+
+
+
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        fieldset {border: none; border-top: 1px solid green;}
+        legend {font-size: 1.4em;text-transform: uppercase;padding: 0 0.5em;}
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <a href="" class="logo">Logo</a>
+            <nav>
+                <ul>
+                    <li><a href="">Nav</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h1>Thanks!</h1>
+                <p>
+                    Lorem, ipsum.
+                </p>
+                
+            </section>
+        </main>
+
+        <aside>
+            <section>
+                <h3>header 3</h3>
+            </section>
+        </aside>
+
+        <footer>
+            footer
+        </footer>
+    </div>
+</body>
+</html>
