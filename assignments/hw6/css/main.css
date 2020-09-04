@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
+@-webkit-keyframes BlurAnimation {
+  0% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+  100% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+@keyframes BlurAnimation {
+  0% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+  100% {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Layout only */
+html, body, .grid-container {
+  height: 100%;
+  margin: 0;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
+  -ms-grid-rows: 4em 1fr 4em;
+      grid-template-rows: 4em 1fr 4em;
+      grid-template-areas: ' header header header ' ' main main main ' ' footer footer footer ';
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+}
+
+/* Styles start here */
+.body-background {
+  background: url("../images/desert-4940300_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header, footer {
+  background-color: white;
+  margin: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  line-height: 64px;
+  z-index: 10;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
+#logo {
+  font-family: 'Dr Sugiyama', cursive;
+  font-size: 2em;
+}
+
+#logo:hover {
+  text-shadow: 2px 2px #c7c7c7;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+nav li {
+  padding-left: 2em;
+}
+
+nav a {
+  text-transform: uppercase;
+  height: 64px;
+}
+
+nav a:hover {
+  text-shadow: 2px 2px #c7c7c7;
+}
+
+nav a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  border: 4px solid;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  bottom: -4px;
+  left: -10px;
+  background: #c7c7c7;
+  border-color: transparent;
+  z-index: 15;
+}
+
+nav a.active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  border: 4px solid;
+  bottom: -4px;
+  left: 0;
+  background: black;
+  border-color: transparent;
+  z-index: 10;
+}
+
+nav a:hover:after {
+  width: calc(100% + 10px);
+  z-index: 15;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+      grid-template-areas: ' . . . ' ' . call-to-action . ' ' . . . ';
+}
+
+body:before {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url("../images/desert-4940300_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body:before {
+  -webkit-animation: BlurAnimation ease 4s;
+          animation: BlurAnimation ease 4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.call-to-action {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: call-to-action;
+}
+
+.call-to-action {
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: opacity;
+  transition: opacity;
+  -webkit-animation: fadeInAnimation ease-in-out 4s;
+          animation: fadeInAnimation ease-in-out 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.call-to-action:hover {
+  opacity: 1;
+  -webkit-transition: opacity;
+  transition: opacity;
+}
+
+.call-to-action h1 {
+  font-size: 3em;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  opacity: 0;
+  z-index: 15;
+  -webkit-animation: fadeInAnimation ease-in-out 2s;
+          animation: fadeInAnimation ease-in-out 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  cursor: default;
+}
+
+.action {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 2em 0;
+  padding: 8px 50px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  opacity: 0;
+  z-index: 15;
+  -webkit-animation: fadeInAnimation ease-in-out 2s;
+          animation: fadeInAnimation ease-in-out 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.action::after, .action::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 5%;
+  height: 20%;
+  border: 2px solid;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.action::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: black;
+  border-right-color: black;
+}
+
+.action::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: black;
+  border-left-color: black;
+}
+
+.action:hover:after, .action:hover:before {
+  width: 100%;
+  height: 100%;
+}
+
+.call-to-action h2 {
+  opacity: 0;
+  z-index: 15;
+  -webkit-animation: fadeInAnimation ease-in-out 2s;
+          animation: fadeInAnimation ease-in-out 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  cursor: default;
+}
+
+footer ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 63px;
+}
+
+footer li {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  margin: 0;
+  padding: 0;
+}
+
+footer li a {
+  text-decoration: none;
+  color: black;
+  font-size: smaller;
+}
+
+footer li a img {
+  height: 44px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.gallery {
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+.gallery .image-outer {
+  height: 33vh;
+  overflow: hidden;
+}
+
+.gallery .image-inner {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.gallery .image-inner:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.img1 {
+  background: url("../images/antelope-canyon-1128815_640.jpg");
+}
+
+.img2 {
+  background: url("../images/canyon-4245261_640.jpg");
+}
+
+.img3 {
+  background: url("../images/cyprus-4030808_640.jpg");
+}
+
+.img4 {
+  background: url("../images/forest-931706_640.jpg");
+}
+
+.img5 {
+  background: url("../images/landscape-615429_640.jpg");
+}
+
+.img6 {
+  background: url("../images/molten-1084181_640.jpg");
+}
+
+.img7 {
+  background: url("../images/rock-wall-1845128_640.jpg");
+}
+
+.img8 {
+  background: url("../images/sandstone-467714_640.jpg");
+}
+
+.img9 {
+  background: url("../images/spring-276014_640.jpg");
+}
+
+.img10 {
+  background: url("../images/startrails-918551_640.jpg");
+}
+
+.img11 {
+  background: url("../images/sunset-3325080_640.jpg");
+}
+
+.img12 {
+  background: url("../images/tree-838667_640.jpg");
+}
+
+.img13 {
+  background: url("../images/yellowstone-national-park-1581879_640.jpg");
+}
+
+.img14 {
+  background: url("../images/turret-arch-1364314_640.jpg");
+}
+
+.img15 {
+  background: url("../images/fog-1535201_640.jpg");
+}
+
+.img16 {
+  background: url("../images/desert-1654439_640.jpg");
+}
+/*# sourceMappingURL=main.css.map */

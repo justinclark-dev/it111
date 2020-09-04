@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:wght@300;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap');
 
 $color-variable: red;
-$main-bg: rgba(0, 0, 0, 0.75);
-$hero-dark: rgba(0, 0, 0, 0.7);
+$main-bg: rgba(0, 0, 0, 0.7);
+$hero-dark: rgba(0, 0, 0, 0.6);
 $dark-bg: rgba(0, 0, 0, 0.9);
 
 body {
@@ -37,10 +38,15 @@ header {
     justify-content: space-between;
     background: $dark-bg;
     padding: 1em 2em;
+    position: relative;
 
     .logo {
         font-weight: bold;
         font-variant-caps: small-caps;
+    }
+
+    .logo:hover {
+        color: white;
     }
 
     a {
@@ -50,15 +56,25 @@ header {
     }
 
     nav {
+        position: absolute;
+        right: 0;
         a {
             text-transform: uppercase;
             font-size: 1em;
+            padding: 18px 2em;
         }
-    }
 
-    a:hover {
-        text-decoration: underline;
-        text-decoration-color: white;
+        a.active {
+            background: rgba(255, 255, 255, 0.6);
+            color: black;
+            border-bottom: 4px solid white;
+        }
+    
+        a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            color: black;
+            border-bottom: 4px solid red;
+        }
     }
 
     ul {
@@ -66,10 +82,6 @@ header {
         margin: 0;
         padding: 0;
         display: flex;
-        
-        li {
-            padding: 0 2em;
-        }
     }
 }
 
@@ -111,6 +123,7 @@ header {
             text-align: justify;
             letter-spacing: 1.2px;
             margin-bottom: 2em;
+            font-family: 'Montserrat';
         }
 
         .front {
@@ -137,6 +150,8 @@ header {
         p {
             line-height: 1.8em;
             letter-spacing: -1px;
+            font-family: 'Montserrat';
+            font-size: large;
         }
     }
 

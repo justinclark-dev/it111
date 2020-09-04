@@ -3,26 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Practical Test</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
+            background: lightgray;
+        }
+        .wrapper {
+            width: 940px;
+            margin: 0 auto;
+            clear: both;
+            overflow: hidden;
+        }
+        header {
+            background: blue;
+            height: 200px;
+        }
+        nav {
+            background: orange;
+            height: 40px;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            line-height: 40px;
+            text-align: center;
+            display: inline-block;
+            width: 153px;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+        }
+        nav a:hover {
             background: black;
             color: white;
-            font-family:'Courier New', Courier, monospace;
-            margin: 0 auto;
-            max-width: 940px;
-            text-align: center;
+            display: block;
         }
-        a { color: lime;}
+        aside {
+            background: pink;
+            height: 250px;
+            width: 340px;
+            float: left;
+        }
+        main {
+            background: yellow;
+            height: 350px;
+            width: 580px;
+            float: right;
+        }
+        footer {
+            border-top: 40px solid gray;
+            margin: auto;
+        }
+        footer ul {
+            text-align: center;
+            list-style: none;
+        }
+        footer ul li {
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Page Under Construction</h1>
-
-    <p><a href="../../">Home</a></p>
-
-    <img src="../../images/death-star.gif" alt="Image of the Death Star under construction.">
-
+    <div class="wrapper">
+        <header></header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Special</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <main></main>
+        <aside></aside>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                <a href="https://validator.w3.org/check?uri=referer">HTML Valid!</a>
+            </li> 
+            <li>
+                <a href="https://validator.w3.org/check?uri=referer">
+                    <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_64.png" alt="HTML5 Valid Logo">
+                </a>
+            </li>
+        </ul>
+    </footer>
+    
 </body>
 </html>
